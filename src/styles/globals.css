@@ -35,3 +35,19 @@ body {
 .animate-fade-in {
   animation: fadeIn 2s ease-out;
 }
+@keyframes move-vertical {
+  0% {
+    transform: translateY(-10px); /* Comienza 10px arriba */
+  }
+  50% {
+    transform: translateY(10px); /* Se mueve 10px hacia abajo */
+  }
+  100% {
+    transform: translateY(-10px); /* Regresa a la posición inicial */
+  }
+}
+
+.animate-move-vertical {
+  animation: move-vertical 2.5s infinite; /* Movimiento continuo hacia arriba y abajo */
+}
+
