@@ -55,7 +55,7 @@ export default function Home() {
           />
         </motion.div>
       </motion.div>
-      <br />.<br />.<br />
+      <br /><br /><br />
 
       {/* Contenedor con animación de fade-in al hacer scroll */}
       <motion.div
