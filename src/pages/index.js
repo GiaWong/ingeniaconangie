@@ -11,36 +11,34 @@ export default function Home() {
     <Layout>
       <Navbar />
 
-      {/* Título principal con animación en cascada */}
-<motion.div
-  initial="hidden"
-  animate="visible"
-  className="text-center mt-48 px-6"
-  variants={{
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.3 },
-    },
-  }}
->
-  <h1 className="text-6xl md:text-6xl font-extrabold font-sans  text-gray-200 drop-shadow-lg">
-    {["Ingeniería en Informática", "Desarrollo de Software", "Gestión de Proyectos IT", "Product Owner" ].map((text, index) => (
+      {/* Título principal con animación en burbujas */}
       <motion.div
-        key={index}
-        className="block"
+        initial="hidden"
+        animate="visible"
+        className="text-center mt-48 px-6"
         variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.3 },
+          },
         }}
       >
-        {text}
+        <h1 className="text-6xl md:text-6xl font-extrabold font-sans text-gray-200 drop-shadow-lg">
+          {["Ingeniería en Informática", "Desarrollo de Software", "Gestión de Proyectos IT", "Product Owner"].map((text, index) => (
+            <motion.div
+              key={index}
+              className="inline-block mx-4 my-2 py-3 px-6 bg-gray-800 text-white rounded-full shadow-lg"
+              variants={{
+                hidden: { opacity: 0, scale: 0.5 },
+                visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
+              }}
+            >
+              {text}
+            </motion.div>
+          ))}
+        </h1>
       </motion.div>
-    ))}
-  </h1>
-</motion.div>
-
-
 
       {/* Contenedor con animación de fade-in al hacer scroll */}
       <motion.div
