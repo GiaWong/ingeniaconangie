@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Features from "../components/Features";
-import Pricing from "../components/Pricing";
+import Services from "../components/Services";
+import QandA from "../components/QandA";
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 
@@ -95,9 +95,9 @@ export default function Home() {
         </motion.div>
       </motion.div>
       <br />.<br />.<br />
-      <Hero />
-      <Features />
-      <Pricing />
+      <Services />
+      <QandA />
+      <Contact />
       <Footer />
     </Layout>
   );

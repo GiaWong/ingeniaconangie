@@ -19,7 +19,7 @@ const qaData = [
   },
 ];
 
-const Features = () => {
+const QandA = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNext = () => {
@@ -65,4 +65,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default QandA;

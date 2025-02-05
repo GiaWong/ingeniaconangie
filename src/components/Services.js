@@ -35,7 +35,7 @@ const services = [
   },
 ];
 
-const Hero = () => {
+const Services = () => {
   return (
     <section className="py-20 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white">
       <div className="max-w-5xl mx-auto px-6">
@@ -112,4 +112,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Services;

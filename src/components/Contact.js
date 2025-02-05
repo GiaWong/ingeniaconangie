@@ -16,7 +16,7 @@ const plans = [
   },
 ];
 
-const Pricing = () => {
+const Contact = () => {
   return (
     <section className="py-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white animate-fade-in">
       <div className="max-w-6xl mx-auto px-6">
@@ -47,4 +47,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default Contact;
