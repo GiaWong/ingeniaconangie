@@ -1,23 +1,23 @@
 const contacts = [
   {
     name: "Redes Sociales",
-    message1: "Búscame en Instagram como @ingeniaconangie",
+    message1: "Búscame en Instagram ",
     link1: "https://www.instagram.com/ingeniaconangie/",
-    message2: "o Facebook como ingeniaconangie",
+    message2: "o Facebook ",
     link2: "https://www.facebook.com/ingeniaconangie",
-    image: "/instagram_facebook.png",
+    image: "/ImagenFBoInsta.png",
   },
   {
     name: "LinkedIn",
     message: "Búscame en LinkedIn",
     link: "https://www.linkedin.com/in/chavelaa",
-    image: "/linkedin.png",
+    image: "/ImagenLinkedin.png",
   },
   {
     name: "Correo Electrónico",
     message: "Mándame un mensaje por mail",
     email: "mailto:laboral.wong@gmail.com",
-    image: "/email.png",
+    image: "/ImagenMail.png",
   },
 ];
 
@@ -40,7 +40,7 @@ const Contact = () => {
                     href={contact.link1}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
+                    className="text-purple-800 hover:underline"
                   >
                     {contact.message1}
                   </a>
@@ -49,7 +49,7 @@ const Contact = () => {
                     href={contact.link2}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
+                    className="text-purple-800 hover:underline"
                   >
                     {contact.message2}
                   </a>
@@ -59,14 +59,14 @@ const Contact = () => {
                   href={contact.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 text-lg font-medium text-blue-600 hover:underline"
+                  className="mt-2 text-lg font-medium text-pink-600 hover:underline"
                 >
                   {contact.message}
                 </a>
               ) : contact.email ? (
                 <a
                   href={contact.email}
-                  className="mt-2 text-lg font-medium text-blue-600 hover:underline"
+                  className="mt-2 text-lg font-medium text-indigo-800 hover:underline"
                 >
                   {contact.message}
                 </a>
