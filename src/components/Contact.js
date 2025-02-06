@@ -18,8 +18,8 @@ const contacts = [
   {
     name: "Correo Electrónico",
     message: "Mándame un mensaje por mail",
-    email: "mailto:laboral.wong@gmail.com",
     image: "/ImagenMail.png",
+    isMail: true, // Nueva propiedad para identificar el botón de correo
   },
 ];
 
@@ -47,9 +47,14 @@ const Contact = () => {
     };
   }, []);
 
+  // Función para abrir Gmail con un borrador listo
+  const handleMailClick = () => {
+    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=laboral.wong@gmail.com", "_blank");
+  };
+
   return (
     <section
-     id="contacto"
+      id="contacto"
       ref={sectionRef}
       className="py-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white"
     >
@@ -67,6 +72,7 @@ const Contact = () => {
             >
               <img src={contact.image} alt={contact.name} className="w-20 h-20 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-800">{contact.name}</h3>
+
               {contact.link1 && contact.link2 ? (
                 <p className="mt-2 text-lg">
                   <a
@@ -96,13 +102,13 @@ const Contact = () => {
                 >
                   {contact.message}
                 </a>
-              ) : contact.email ? (
-                <a
-                  href={contact.email}
+              ) : contact.isMail ? (
+                <button
+                  onClick={handleMailClick}
                   className="mt-2 text-lg font-medium text-indigo-800 hover:underline"
                 >
                   {contact.message}
-                </a>
+                </button>
               ) : (
                 <p className="mt-2 text-lg text-gray-700">{contact.message}</p>
               )}
