@@ -31,7 +31,7 @@ const QandA = () => {
   };
 
   return (
-    <section className="mt-10 py-20 text-center py-16 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white animate-fade-in">
+    <section id="qanda" className="mt-10 py-20 text-center py-16 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white animate-fade-in">
       <h1 className="text-8xl font-bold font-sans">Q&A</h1>
       <br /><br /><br />
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center relative">

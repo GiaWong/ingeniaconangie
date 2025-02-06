@@ -13,6 +13,7 @@ export default function Home() {
 
        {/* Contenedor del título y la nueva imagen */}
        <motion.div
+        id="quien-soy"
         initial="hidden"
         animate="visible"
         className="flex flex-col md:flex-row items-center justify-between mt-48 px-6"
