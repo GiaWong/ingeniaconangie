@@ -1,3 +1,5 @@
+import { useEffect, useState, useRef } from "react";
+
 const contacts = [
   {
     name: "Redes Sociales",
@@ -22,15 +24,44 @@ const contacts = [
 ];
 
 const Contact = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="py-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white animate-fade-in">
+    <section
+      ref={sectionRef}
+      className="py-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white"
+    >
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center">Contacto</h2>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
           {contacts.map((contact, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-lg shadow-md text-center"
+              className={`p-6 bg-white rounded-lg shadow-md text-center transform transition duration-500 ease-out hover:scale-110 hover:shadow-lg ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
               <img src={contact.image} alt={contact.name} className="w-20 h-20 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-800">{contact.name}</h3>
