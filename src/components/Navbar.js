@@ -26,7 +26,7 @@ const Navbar = () => {
       className="px-14 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 shadow-md py-10 fixed top-0 left-0 right-0 z-50 flex justify-between items-center"
     >
       {/* Logo */}
-      <div className="text-4xl font-bold text-white">Ingenia con Angie</div>
+      <div className="text-3xl font-bold text-white">Ingenia con Angie</div>
 
       {/* Contenedor alineado a la derecha */}
       <div className="hidden md:flex flex-1 justify-end items-center space-x-6">
@@ -36,7 +36,7 @@ const Navbar = () => {
             to={to} 
             smooth={true} 
             duration={500} 
-            className="cursor-pointer text-2xl text-white hover:text-black"
+            className="cursor-pointer font-semibold text-1xl text-white hover:text-black"
           >
             {label}
           </Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Botón "Escribime por mail" */}
         <button
           onClick={handleMailClick}
-          className="bg-white text-pink-600 text-2xl font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition"
+          className="bg-white text-pink-600 text-1xl font-semibold px-4 py-3 rounded-full shadow-lg hover:bg-gray-100 transition"
         >
           Escribime por mail
         </button>
