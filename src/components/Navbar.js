@@ -13,15 +13,20 @@ const links = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Función para abrir Gmail en una nueva pestaña
+  const handleMailClick = () => {
+    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=laboral.wong@gmail.com", "_blank");
+  };
+
   return (
     <motion.nav 
       initial={{ opacity: 0, y: -20 }} 
       animate={{ opacity: 1, y: 0 }} 
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 shadow-md py-10 fixed top-0 left-0 right-0 z-50 flex justify-between items-center"
+      className="px-14 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 shadow-md py-10 fixed top-0 left-0 right-0 z-50 flex justify-between items-center"
     >
       {/* Logo */}
-      <div className="  text-4xl font-bold text-white">Ingenia con Angie</div>
+      <div className="text-4xl font-bold text-white">Ingenia con Angie</div>
 
       {/* Contenedor alineado a la derecha */}
       <div className="hidden md:flex flex-1 justify-end items-center space-x-6">
@@ -37,12 +42,12 @@ const Navbar = () => {
           </Link>
         ))}
         {/* Botón "Escribime por mail" */}
-        <a
-          href="mailto:laboral.wong@gmail.com"
+        <button
+          onClick={handleMailClick}
           className="bg-white text-pink-600 text-2xl font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition"
         >
           Escribime por mail
-        </a>
+        </button>
       </div>
 
       {/* Botón menú hamburguesa en móviles */}
