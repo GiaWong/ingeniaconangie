@@ -53,7 +53,8 @@ const Contact = () => {
       className="py-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white"
     >
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center">Contacto</h2>
+        <h2 className="text-8xl font-bold font-sans text-center">Contacto</h2>
+        <br /><br /><br />
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
           {contacts.map((contact, index) => (
             <div
