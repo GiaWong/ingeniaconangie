@@ -1,18 +1,23 @@
-const plans = [
+const contacts = [
   {
-    name: "Gratis",
-    price: "$0/mes",
-    features: ["Tareas ilimitadas", "Colaboración básica", "Soporte por email"],
+    name: "Redes Sociales",
+    message1: "Búscame en Instagram como @ingeniaconangie",
+    link1: "https://www.instagram.com/ingeniaconangie/",
+    message2: "o Facebook como ingeniaconangie",
+    link2: "https://www.facebook.com/ingeniaconangie",
+    image: "/instagram_facebook.png",
   },
   {
-    name: "Pro",
-    price: "$9.99/mes",
-    features: ["Todo en Gratis", "Integraciones avanzadas", "Soporte prioritario"],
+    name: "LinkedIn",
+    message: "Búscame en LinkedIn",
+    link: "https://www.linkedin.com/in/chavelaa",
+    image: "/linkedin.png",
   },
   {
-    name: "Empresas",
-    price: "Personalizado",
-    features: ["Todo en Pro", "Gestión de equipos", "Soporte 24/7"],
+    name: "Correo Electrónico",
+    message: "Mándame un mensaje por mail",
+    email: "mailto:laboral.wong@gmail.com",
+    image: "/email.png",
   },
 ];
 
@@ -22,23 +27,52 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center">Contacto</h2>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
+          {contacts.map((contact, index) => (
             <div
               key={index}
               className="p-6 bg-white rounded-lg shadow-md text-center"
             >
-              <h3 className="text-xl font-semibold text-gray-800">{plan.name}</h3>
-              <p className="mt-2 text-2xl font-bold text-gray-900">{plan.price}</p>
-              <ul className="mt-4 space-y-2 text-gray-600">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center justify-center">
-                    ✅ {feature}
-                  </li>
-                ))}
-              </ul>
-              <button className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                Elegir Plan
-              </button>
+              <img src={contact.image} alt={contact.name} className="w-20 h-20 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-800">{contact.name}</h3>
+              {contact.link1 && contact.link2 ? (
+                <p className="mt-2 text-lg">
+                  <a
+                    href={contact.link1}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    {contact.message1}
+                  </a>
+                  <br />
+                  <a
+                    href={contact.link2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    {contact.message2}
+                  </a>
+                </p>
+              ) : contact.link ? (
+                <a
+                  href={contact.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 text-lg font-medium text-blue-600 hover:underline"
+                >
+                  {contact.message}
+                </a>
+              ) : contact.email ? (
+                <a
+                  href={contact.email}
+                  className="mt-2 text-lg font-medium text-blue-600 hover:underline"
+                >
+                  {contact.message}
+                </a>
+              ) : (
+                <p className="mt-2 text-lg text-gray-700">{contact.message}</p>
+              )}
             </div>
           ))}
         </div>
