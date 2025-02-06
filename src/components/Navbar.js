@@ -23,7 +23,7 @@ const Navbar = () => {
       initial={{ opacity: 0, y: -20 }} 
       animate={{ opacity: 1, y: 0 }} 
       transition={{ duration: 0.5 }}
-      className="px-14 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 shadow-md py-10 fixed top-0 left-0 right-0 z-50 flex justify-between items-center"
+      className="px-14 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 shadow-md py-6 fixed top-0 left-0 right-0 z-50 flex justify-between items-center"
     >
       {/* Logo */}
       <div className="text-3xl font-bold text-white">Ingenia con Angie</div>
