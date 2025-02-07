@@ -31,7 +31,7 @@ export default function Home() {
             {["Ingeniería en Informática", "Desarrollo de Software", "Gestión de Proyectos IT", "Product Owner"].map((text, index) => (
               <motion.div
                 key={index}
-                className="inline-block mx-6 my-6 py-3 px-6 bg-blue-600 text-white rounded-full shadow-lg"
+                className="inline-block mx-6 my-6 py-3 px-6 bg-white text-purple-800 rounded-full shadow-lg"
                 variants={{
                   hidden: { opacity: 0, scale: 0.5 },
                   visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
