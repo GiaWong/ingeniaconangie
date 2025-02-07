@@ -40,10 +40,10 @@ const Services = () => {
     <section id="servicios" className="py-20 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white">
       <div className="max-w-5xl mx-auto px-6">
         <h1 className="text-8xl font-bold font-sans">Servicios</h1>
-        <br /><br /><br />
+       
         {/* Contenedor de tarjetas con animación */}
         <motion.div
-          className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className=" grid grid-cols-1 md:grid-cols-3 gap-8 mt-32  mb-32"
           initial="hidden"
           animate="visible"
           variants={{

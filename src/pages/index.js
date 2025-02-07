@@ -6,13 +6,20 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 
+const textLines = [
+  "Soy Product Owner y estudiante avanzada de Ingeniería en Informática en la UBA.",
+  "Me especializo en colaborar con empresas y dar asesoramiento a estudiantes que recién comienzan en el mundo de la informática.",
+  "Mi enfoque está en entender las necesidades del negocio y transformar esas ideas en soluciones claras y efectivas.",
+  "Si estás buscando mejorar o emprender proyectos en el ámbito IT, ¡puedo ayudarte!"
+];
+
 export default function Home() {
   return (
     <Layout>
       <Navbar />
 
-       {/* Contenedor del título y la nueva imagen */}
-       <motion.div
+      {/* Contenedor del título y la nueva imagen */}
+      <motion.div
         id="quien-soy"
         initial="hidden"
         animate="visible"
@@ -26,7 +33,7 @@ export default function Home() {
         }}
       >
         {/* Título principal con animación en burbujas */}
-        <motion.div className="text-left md:w-1/2">
+        <motion.div className="text-center md:w-1/2">
           <h1 className="text-5xl md:text-4xl font-extrabold font-sans text-gray-200 drop-shadow-lg">
             {["Ingeniería en Informática", "Desarrollo de Software", "Gestión de Proyectos IT", "Product Owner"].map((text, index) => (
               <motion.div
@@ -46,7 +53,7 @@ export default function Home() {
         {/* Imagen adicional al costado del título */}
         <motion.div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
           <motion.img
-            src="/ImagenInicial.png" // Cambia esta ruta por la de la imagen que quieras agregar
+            src="/ImagenInicial.png"
             alt="Descripción de la imagen"
             className="w-[600px] h-auto animate-move-vertical md:mr-8 mb-6 md:mb-0"
             initial={{ opacity: 0, x: -50 }}
@@ -64,35 +71,29 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
-        className="flex flex-col md:flex-row items-center justify-center mt-10 px-8"
+        className="flex flex-col items-center justify-center mt-32 px-8 mb-32"
       >
-        {/* Imagen con animación */}
-        <motion.img
-          src="/ImagenIntermedio.png"
-          alt="Descripción de la imagen"
-          className="w-[600px] h-auto animate-move-vertical md:mr-8 mb-6 md:mb-0"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        />
-
-        {/* Texto con animación */}
+        {/* Texto con efecto de cascada centrado */}
         <motion.div
-          className="text-center md:text-left max-w-2xl"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          viewport={{ once: true }}
+          className="text-center max-w-2xl mx-auto"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.3 } },
+          }}
         >
-          <p className="mt-6 text-lg font-extrabold font-sans text-gray-200">
-            Soy Product Owner y estudiante avanzada de Ingeniería en Informática en la UBA.
-            Me especializo en colaborar con empresas y dar asesoramiento a estudiantes que recién comienzan en el mundo 
-            de la informática. 
-            Mi enfoque está en entender las necesidades del negocio y transformar esas 
-            ideas en soluciones claras y efectivas. 
-            Si estás buscando mejorar o emprender proyectos en el ámbito IT, ¡puedo ayudarte!
-          </p>
+          {textLines.map((line, index) => (
+            <motion.p
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.3 }}
+              className="text-xl md:text-2xl font-extrabold font-sans text-gray-200 leading-relaxed"
+            >
+              {line}
+            </motion.p>
+          ))}
         </motion.div>
       </motion.div>
       <br />.<br />.<br />

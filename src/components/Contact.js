@@ -60,8 +60,7 @@ const Contact = () => {
     >
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-8xl font-bold font-sans text-center">Contacto</h2>
-        <br /><br /><br />
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-32  mb-32 grid grid-cols-1 md:grid-cols-3 gap-8">
           {contacts.map((contact, index) => (
             <div
               key={index}

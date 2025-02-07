@@ -33,14 +33,14 @@ const QandA = () => {
   return (
     <section id="qanda" className="mt-10 py-20 text-center py-16 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white animate-fade-in">
       <h1 className="text-8xl font-bold font-sans">Q&A</h1>
-      <br /><br /><br />
+   
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center relative">
         <div className="w-full md:w-2/3 relative mb-6 md:mb-0">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="p-6 bg-transparent rounded-lg shadow-md text-center"
+            className="p-6 bg-transparent rounded-lg shadow-md text-center mt-32  mb-32"
           >
             <h3 className="text-2xl font-bold text-white drop-shadow-md">{qaData[currentIndex].question}</h3>
             <div className="text-5xl mt-4">{qaData[currentIndex].icon}</div>
