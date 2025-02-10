@@ -13,90 +13,81 @@ const textLines = [
   "Si estás buscando mejorar o emprender proyectos en el ámbito IT, ¡puedo ayudarte!"
 ];
 
+const bubbleTexts = [
+  "Ingeniería en Informática",
+  "Desarrollo de Software",
+  "Gestión de Proyectos IT",
+  "Product Owner"
+];
+
+const TitleSection = () => (
+  <motion.div
+    id="quien-soy"
+    initial="hidden"
+    animate="visible"
+    className="flex flex-col md:flex-row items-center justify-between mt-48 px-6"
+    variants={{
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { staggerChildren: 0.3 } }
+    }}
+  >
+    {/* Título principal con animación en burbujas */}
+    <motion.div className="text-center md:w-1/2">
+      <h1 className="text-5xl md:text-4xl font-extrabold font-sans text-gray-200 drop-shadow-lg">
+        {bubbleTexts.map((text, index) => (
+          <motion.div
+            key={index}
+            className="inline-block mx-6 my-6 py-3 px-6 bg-white text-purple-800 rounded-full shadow-lg"
+            variants={{
+              hidden: { opacity: 0, scale: 0.5 },
+              visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } }
+            }}
+          >
+            {text}
+          </motion.div>
+        ))}
+      </h1>
+    </motion.div>
+
+    {/* Imagen al costado del título */}
+    <motion.div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
+      <motion.img
+        src="/ImagenInicial.png"
+        alt="Descripción de la imagen"
+        className="w-[600px] h-auto animate-move-vertical md:mr-8 mb-6 md:mb-0"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      />
+    </motion.div>
+  </motion.div>
+);
+
+const AboutSection = () => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    viewport={{ once: true }}
+    className="flex flex-col items-center justify-center mt-32 px-8 mb-32"
+  >
+    <div className="text-center max-w-2xl mx-auto">
+      {textLines.map((line, index) => (
+        <p key={index} className="text-xl md:text-2xl font-extrabold font-sans text-gray-200 leading-relaxed">
+          {line}
+        </p>
+      ))}
+    </div>
+  </motion.div>
+);
+
 export default function Home() {
   return (
     <Layout>
       <Navbar />
-
-      {/* Contenedor del título y la nueva imagen */}
-      <motion.div
-        id="quien-soy"
-        initial="hidden"
-        animate="visible"
-        className="flex flex-col md:flex-row items-center justify-between mt-48 px-6"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.3 },
-          },
-        }}
-      >
-        {/* Título principal con animación en burbujas */}
-        <motion.div className="text-center md:w-1/2">
-          <h1 className="text-5xl md:text-4xl font-extrabold font-sans text-gray-200 drop-shadow-lg">
-            {["Ingeniería en Informática", "Desarrollo de Software", "Gestión de Proyectos IT", "Product Owner"].map((text, index) => (
-              <motion.div
-                key={index}
-                className="inline-block mx-6 my-6 py-3 px-6 bg-white text-purple-800 rounded-full shadow-lg"
-                variants={{
-                  hidden: { opacity: 0, scale: 0.5 },
-                  visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
-                }}
-              >
-                {text}
-              </motion.div>
-            ))}
-          </h1>
-        </motion.div>
-
-        {/* Imagen adicional al costado del título */}
-        <motion.div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
-          <motion.img
-            src="/ImagenInicial.png"
-            alt="Descripción de la imagen"
-            className="w-[600px] h-auto animate-move-vertical md:mr-8 mb-6 md:mb-0"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          />
-        </motion.div>
-      </motion.div>
-      <br /><br /><br />
-
-      {/* Contenedor con animación de fade-in al hacer scroll */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="flex flex-col items-center justify-center mt-32 px-8 mb-32"
-      >
-        {/* Texto con efecto de cascada centrado */}
-        <motion.div
-          className="text-center max-w-2xl mx-auto"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.3 } },
-          }}
-        >
-          {textLines.map((line, index) => (
-            <motion.p
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.3 }}
-              className="text-xl md:text-2xl font-extrabold font-sans text-gray-200 leading-relaxed"
-            >
-              {line}
-            </motion.p>
-          ))}
-        </motion.div>
-      </motion.div>
-      <br />.<br />.<br />
+      <TitleSection />
+      <AboutSection />
       <Services />
       <QandA />
       <Contact />
