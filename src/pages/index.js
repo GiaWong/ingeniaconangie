@@ -52,7 +52,7 @@ const TitleSection = () => (
     {/* Imagen al costado del título */}
     <motion.div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
       <motion.img
-        src="/ImagenInicial.png"
+        src="/LogoBlanco.png"
         alt="Descripción de la imagen"
         className="w-[600px] h-auto animate-move-vertical md:mr-8 mb-6 md:mb-0"
         initial={{ opacity: 0, x: -50 }}
