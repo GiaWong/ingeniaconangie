@@ -64,23 +64,54 @@ const TitleSection = () => (
   </motion.div>
 );
 
-const AboutSection = () => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 1 }}
-    viewport={{ once: true }}
-    className="flex flex-col items-center justify-center mt-32 px-8 mb-32"
-  >
-    <div className="text-center max-w-2xl mx-auto">
-      {textLines.map((line, index) => (
-        <p key={index} className="text-xl md:text-2xl font-extrabold font-sans text-gray-200 leading-relaxed">
-          {line}
-        </p>
-      ))}
-    </div>
-  </motion.div>
-);
+const AboutSection = () => {
+  const firstHalf = textLines.slice(0, Math.ceil(textLines.length / 2));
+  const secondHalf = textLines.slice(Math.ceil(textLines.length / 2));
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="flex flex-col md:flex-row items-center justify-center mt-32 px-8 mb-32 gap-6"
+    >
+      {/* Bloque Izquierdo */}
+      <motion.div
+        className="bg-pink-900 bg-opacity-10 p-6 rounded-lg shadow-lg max-w-lg w-full text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.05 }} // Zoom leve al hacer hover
+      >
+        {firstHalf.map((line, index) => (
+          <p key={index} className="text-xl md:text-2xl font-extrabold font-sans text-gray-200 leading-relaxed">
+            {line}
+          </p>
+        ))}
+      </motion.div>
+
+      {/* Bloque Derecho */}
+      <motion.div
+        className="bg-pink-900 bg-opacity-10 p-6 rounded-lg shadow-lg max-w-lg w-full text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }} // Agregamos un pequeño delay para que aparezca después
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.05 }} // Zoom leve al hacer hover
+      >
+        {secondHalf.map((line, index) => (
+          <p key={index} className="text-xl md:text-2xl font-extrabold font-sans text-gray-200 leading-relaxed">
+            {line}
+          </p>
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+};
+
+
 
 export default function Home() {
   return (
