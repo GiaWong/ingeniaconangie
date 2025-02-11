@@ -85,11 +85,9 @@ const AboutSection = () => {
         viewport={{ once: true }}
         whileHover={{ scale: 1.05 }} // Zoom leve al hacer hover
       >
-        {firstHalf.map((line, index) => (
-          <p key={index} className="text-xl md:text-2xl font-extrabold font-sans text-gray-200 leading-relaxed">
-            {line}
-          </p>
-        ))}
+        <p className="text-lg md:text-xl font-semibold font-sans text-gray-200 leading-relaxed">
+          {firstHalf.join(" ")}
+        </p>
       </motion.div>
 
       {/* Bloque Derecho */}
@@ -97,19 +95,18 @@ const AboutSection = () => {
         className="bg-pink-900 bg-opacity-10 p-6 rounded-lg shadow-lg max-w-lg w-full text-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }} // Agregamos un pequeño delay para que aparezca después
+        transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
         whileHover={{ scale: 1.05 }} // Zoom leve al hacer hover
       >
-        {secondHalf.map((line, index) => (
-          <p key={index} className="text-xl md:text-2xl font-extrabold font-sans text-gray-200 leading-relaxed">
-            {line}
-          </p>
-        ))}
+        <p className="text-lg md:text-xl font-semibold font-sans text-gray-200 leading-relaxed">
+          {secondHalf.join(" ")}
+        </p>
       </motion.div>
     </motion.div>
   );
 };
+
 
 
 
