@@ -64,13 +64,13 @@ const Contact = () => {
           {contacts.map((contact, index) => (
             <div
               key={index}
-              className={`p-6 bg-white rounded-lg shadow-md text-center transform transition duration-500 ease-out hover:scale-110 hover:shadow-lg ${
+              className={`p-6 bg-purple-800 bg-opacity-30 rounded-lg shadow-md text-center transform transition duration-500 ease-out hover:scale-110 hover:shadow-lg ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <img src={contact.image} alt={contact.name} className="w-20 h-20 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-800">{contact.name}</h3>
+              <h3 className="text-xl font-semibold text-white-800">{contact.name}</h3>
 
               {contact.link1 && contact.link2 ? (
                 <p className="mt-2 text-lg">
@@ -78,7 +78,7 @@ const Contact = () => {
                     href={contact.link1}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-purple-800 hover:underline"
+                    className="text-white hover:underline"
                   >
                     {contact.message1}
                   </a>
@@ -87,7 +87,7 @@ const Contact = () => {
                     href={contact.link2}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-purple-800 hover:underline"
+                    className="text-white hover:underline"
                   >
                     {contact.message2}
                   </a>
@@ -97,19 +97,19 @@ const Contact = () => {
                   href={contact.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 text-lg font-medium text-pink-600 hover:underline"
+                  className="mt-2 text-lg font-medium text-white hover:underline"
                 >
                   {contact.message}
                 </a>
               ) : contact.isMail ? (
                 <button
                   onClick={handleMailClick}
-                  className="mt-2 text-lg font-medium text-indigo-800 hover:underline"
+                  className="mt-2 text-lg font-medium text-white hover:underline"
                 >
                   {contact.message}
                 </button>
               ) : (
-                <p className="mt-2 text-lg text-gray-700">{contact.message}</p>
+                <p className="mt-2 text-lg text-white">{contact.message}</p>
               )}
             </div>
           ))}
