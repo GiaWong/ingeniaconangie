@@ -57,7 +57,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="p-6 bg-white text-black rounded-2xl shadow-lg"
+              className="p-6 bg-pink-800 bg-opacity-30 text-white rounded-2xl shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
