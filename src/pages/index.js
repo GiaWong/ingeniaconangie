@@ -21,23 +21,24 @@ const bubbleTexts = [
 ];
 
 const TitleSection = () => (
-  <motion.div
-    id="quien-soy"
-    initial="hidden"
-    animate="visible"
-    className="flex flex-col md:flex-row items-center justify-between mt-48 px-6"
-    variants={{
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren: 0.3 } }
-    }}
-  >
-    {/* Título principal con animación en burbujas */}
-    <motion.div className="text-center md:w-1/2">
-      <h1 className="text-5xl md:text-4xl font-extrabold font-sans text-gray-200 drop-shadow-lg">
+    <motion.div
+      id="quien-soy"
+      initial="hidden"
+      animate="visible"
+      className="flex items-center justify-center mt-48 px-6 w-full gap-x-[2vw] max-w-[90vw] mx-auto"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.3 } }
+      }}
+    >
+      {/* Contenedor de burbujas en forma de cascada vertical */}
+      <motion.div className="flex flex-col items-start justify-center gap-y-4">
         {bubbleTexts.map((text, index) => (
           <motion.div
             key={index}
-            className="inline-block mx-6 my-6 py-3 px-6 bg-white text-purple-800 rounded-full shadow-lg"
+            className="font-bold text-3xl py-3 px-6 bg-white text-purple-800 rounded-full shadow-lg whitespace-nowrap"
+            // Cada burbuja se desplaza un poco más a la derecha según su posición (efecto cascada)
+            style={{ transform: `translateX(${index * 10}px)` }} 
             variants={{
               hidden: { opacity: 0, scale: 0.5 },
               visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } }
@@ -46,23 +47,23 @@ const TitleSection = () => (
             {text}
           </motion.div>
         ))}
-      </h1>
+      </motion.div>
+  
+      {/* Imagen alineada */}
+      <motion.div className="flex-shrink-0">
+        <motion.img
+          src="/LogoBlanco.png"
+          alt="Logo"
+          className="max-w-[40vw] md:max-w-[40vw] w-auto h-auto animate-move-vertical"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        />
+      </motion.div>
     </motion.div>
-
-    {/* Imagen al costado del título */}
-    <motion.div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
-      <motion.img
-        src="/LogoBlanco.png"
-        alt="Descripción de la imagen"
-        className="w-[600px] h-auto animate-move-vertical md:mr-8 mb-6 md:mb-0"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      />
-    </motion.div>
-  </motion.div>
 );
+  
 
 const AboutSection = () => {
   const firstHalf = textLines.slice(0, Math.ceil(textLines.length / 2));
