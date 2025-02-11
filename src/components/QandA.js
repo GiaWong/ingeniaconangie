@@ -3,19 +3,44 @@ import { motion } from 'framer-motion';
 
 const qaData = [
   {
-    question: "¿Cómo organizar mis tareas de manera eficiente?",
-    answer: "Puedes organizar tus tareas usando listas y asignando prioridades. La clave es dividir las tareas grandes en partes más pequeñas y manejables.",
+    question: "¿En qué áreas puedes ayudarme?",
+    answer: " Desarrollo de software, dirección de proyectos IT, consultoría en programación y gestión de productos digitales como Product Owner.",
+    icon: "💡",
+  },
+  {
+    question: "¿Qué tipo de proyectos realizas?",
+    answer: "Desde aplicaciones web y sistemas personalizados hasta la planificación y gestión de proyectos IT, adaptándome a las necesidades de cada negocio.",
     icon: "✅",
   },
   {
-    question: "¿Cómo mejorar la colaboración en equipo?",
-    answer: "Usar herramientas de gestión de proyectos, compartir archivos en la nube y mantener una comunicación constante a través de plataformas como Slack pueden mejorar mucho la colaboración.",
+    question: "¿Cómo puedo contactarte?",
+    answer: "Escríbeme un mensaje directo o consulta en mi perfil para más detalles.",
     icon: "🤝",
   },
   {
-    question: "¿Qué son los recordatorios inteligentes?",
-    answer: "Son notificaciones personalizadas que te recuerdan tus tareas pendientes en momentos claves, evitando que olvides lo más importante.",
-    icon: "⏰",
+    question: "¿Ofreces servicios remotos?",
+    answer: " ¡Claro! Trabajo tanto de manera remota como híbrida según lo que necesites.",
+    icon: "👩‍💻",
+  },
+  {
+    question: "¿Tienes experiencia liderando equipos?",
+    answer: "Sí, he dirigido proyectos IT y gestionado equipos asegurando que cada objetivo se cumpla de manera eficiente.",
+    icon: "🏆",
+  },
+  {
+    question: "¿Puedes ayudar con la gestión de proyectos IT?",
+    answer: "Sí, me encargo de la planificación, organización y seguimiento de proyectos para garantizar su éxito.",
+    icon: "🕚",
+  },
+  {
+    question: "¿Qué implica tu rol como Product Owner?",
+    answer: " Me encargo de traducir las necesidades del negocio en soluciones estratégicas, priorizando funcionalidades y asegurando el alineamiento con los objetivos del proyecto.",
+    icon: "👩‍🏫",
+  },
+  {
+    question: "¿Puedes optimizar procesos dentro de una empresa?",
+    answer: "Sí, analizo flujos de trabajo y propongo mejoras para hacer más eficientes los procesos tecnológicos y de gestión.",
+    icon: "💯",
   },
 ];
 
