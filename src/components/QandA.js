@@ -65,7 +65,7 @@ const QandA = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="p-6 bg-transparent rounded-lg shadow-md text-center mt-32  mb-32"
+            className="p-6 bg-indigo-900 bg-opacity-30 rounded-lg shadow-md text-center mt-32  mb-32"
           >
             <h3 className="text-2xl font-bold text-white drop-shadow-md">{qaData[currentIndex].question}</h3>
             <div className="text-5xl mt-4">{qaData[currentIndex].icon}</div>
