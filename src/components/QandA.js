@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion,  AnimatePresence } from 'framer-motion';
 
 const qaData = [
   {
@@ -44,47 +44,63 @@ const qaData = [
   },
 ];
 
+
 const QandA = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % qaData.length);
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex + 2 >= qaData.length ? 0 : prevIndex + 2
+    );
   };
 
-  const goToPrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + qaData.length) % qaData.length);
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex - 2 < 0 ? Math.max(0, qaData.length - (qaData.length % 2 ? 1 : 2)) : prevIndex - 2
+    );
   };
 
   return (
-    <section id="qanda" className="mt-10 py-20 text-center py-16 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white animate-fade-in">
-      <h1 className="text-8xl font-bold font-sans">Q&A</h1>
-   
-      <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center relative">
-        <div className="w-full md:w-2/3 relative mb-6 md:mb-0">
+    <section 
+      id="qanda"
+      className="mt-10 py-20 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white">
+      <h1 className="text-8xl font-bold font-sans text-center">Q&A</h1>
+      
+      <div className="mt-32  mb-32 gap-8 max-w-4xl mx-auto px-6 relative overflow-hidden">
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="p-6 bg-indigo-900 bg-opacity-30 rounded-lg shadow-md text-center mt-32  mb-32"
+            key={currentIndex}
+            className="flex gap-6 justify-center items-center transition-all"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            <h3 className="text-2xl font-bold text-white drop-shadow-md">{qaData[currentIndex].question}</h3>
-            <div className="text-5xl mt-4">{qaData[currentIndex].icon}</div>
-            <p className="mt-2 text-lg text-white drop-shadow-md">{qaData[currentIndex].answer}</p>
+            {qaData.slice(currentIndex, currentIndex + 2).map((item, index) => (
+              <div
+                key={index}
+                className="w-96 p-6 bg-indigo-900 bg-opacity-30 rounded-lg shadow-lg text-center flex flex-col items-center"
+              >
+                <h3 className="text-2xl font-bold">{item.question}</h3>
+                <div className="text-5xl mt-4">{item.icon}</div>
+                <p className="mt-2 text-lg">{item.answer}</p>
+              </div>
+            ))}
           </motion.div>
+        </AnimatePresence>
 
-          <button
-            onClick={goToPrev}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-pink-200 border-2 border-white rounded-full flex items-center justify-center hover:bg-pink-500 transition-all duration-200"
-          >
-            <span className="text-white text-2xl">&#x276E;</span>
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-pink-200 border-2 border-white rounded-full flex items-center justify-center hover:bg-pink-500 transition-all duration-200"
-          >
-            <span className="text-white text-2xl">&#x276F;</span>
-          </button>
-        </div>
+        <button
+          onClick={prevSlide}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-pink-500 border-2 border-white rounded-full flex items-center justify-center hover:bg-pink-600 transition-all"
+        >
+          &#x276E;
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-pink-500 border-2 border-white rounded-full flex items-center justify-center hover:bg-pink-600 transition-all"
+        >
+          &#x276F;
+        </button>
       </div>
     </section>
   );
