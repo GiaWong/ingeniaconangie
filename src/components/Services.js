@@ -4,33 +4,34 @@ const services = [
   {
     title: "Desarrollo de Software",
     description:
-      "Creamos soluciones a medida con las mejores tecnologías.",
+      "Si necesitás una solución digital a medida, te ayudo a hacerla realidad con las mejores tecnologías. Trabajo en frontend, backend y fullstack, así que puedo acompañarte en todo el proceso de desarrollo.",
     image: "/ImagenCarrusel1.png",
     items: [
-      "Creación de aplicaciones desde cero",
-      "Optimización de sistemas y proyectos existentes para mejorar rendimiento y funcionalidad",
-      "Desarrollo de sistemas de gestión de bases de datos, juegos interactivos, páginas web modernas, aplicaciones multiplataforma"
+      "Diseño aplicaciones desde cero, adaptadas a lo que necesitás",
+      "Optimizo sistemas existentes para que sean más rápidos, eficientes y fáciles de mantener",
+      "Desarrollo bases de datos, páginas web modernas, apps interactivas y soluciones multiplataforma"
     ]
   },
   {
     title: "Dirección de Proyectos IT",
     description:
-      "Gestionamos proyectos tecnológicos con metodologías ágiles.",
+      "Si tenés un proyecto tecnológico y querés que todo esté bien organizado, te ayudo a planificar y gestionar cada paso con metodologías ágiles.",
     image: "/ImagenCarrusel2.png",
     items: [
-      "Organización, seguimiento y liderazgo para llevar al éxito tus proyectos",
-      "Traducir necesidades de negocio en soluciones estratégicas, optimizando procesos y potenciando el impacto de los productos digitales"
+      "Te acompaño en la planificación, organización y seguimiento para que tu proyecto avance sin trabas",
+      "Como Product Owner, traduzco las necesidades del negocio en soluciones tecnológicas estratégicas",
+      "Optimizo procesos y mejoro el impacto de los productos digitales para que logren los mejores resultados"
     ]
   },
   {
     title: "Consultoría de Programación",
     description:
-      "Asesoramiento experto para optimizar tu código y procesos.",
+      "Si estás arrancando en la programación y querés mejorar, te ayudo a entender los conceptos clave y a escribir código más limpio y eficiente.",
     image: "/ImagenCarrusel3.png",
     items: [
-      "Revisión y optimización de código",
-      "Implementación de mejores prácticas de desarrollo",
-      "Capacitación y mentoría para equipos de desarrollo"
+      "Te explico de manera sencilla Programación Orientada a Objetos (POO) y programación estructurada",
+      "Te enseño buenas prácticas para que tu código sea más claro, ordenado y fácil de mantener",
+      "Te acompaño con mentoría y capacitaciones para que te sientas seguro programando y puedas encarar proyectos con confianza"
     ]
   },
 ];
