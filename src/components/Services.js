@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const services = [
   {
@@ -37,22 +38,19 @@ const services = [
 ];
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState(null);
+
   return (
     <section id="servicios" className="py-20 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white">
       <div className="max-w-5xl mx-auto px-6">
         <h1 className="text-8xl font-bold font-sans">Servicios</h1>
-       
-        {/* Contenedor de tarjetas con animación */}
         <motion.div
-          className=" grid grid-cols-1 md:grid-cols-3 gap-8 mt-32  mb-32"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-32 mb-32"
           initial="hidden"
           animate="visible"
           variants={{
             hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.3 },
-            },
+            visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
           }}
         >
           {services.map((service, index) => (
@@ -91,24 +89,38 @@ const Services = () => {
               >
                 {service.description}
               </motion.p>
-              <ul className="mt-4 text-left list-disc pl-5">
-                {service.items.map((item, idx) => (
-                  <motion.li
-                    key={idx}
-                    className="text-sm"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 + idx * 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
+            
+              <button
+                className="mt-4 px-4 py-2 bg-white text-pink-700 font-bold rounded-lg"
+                onClick={() => setSelectedService(service)}
+              >
+                Más info
+              </button>
             </motion.div>
           ))}
         </motion.div>
       </div>
+      {selectedService && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white text-black p-6 rounded-lg max-w-md text-center relative">
+            <h2 className="text-2xl font-bold">{selectedService.title}</h2>
+           
+            <ul className="mt-4 text-left list-disc pl-5">
+              {selectedService.items.map((item, idx) => (
+                <li key={idx} className="text-sm">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <button
+              className="mt-4 px-4 py-2 bg-pink-700 text-white font-bold rounded-lg"
+              onClick={() => setSelectedService(null)}
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
