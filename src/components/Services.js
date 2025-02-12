@@ -102,12 +102,12 @@ const Services = () => {
       </div>
       {selectedService && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white text-black p-6 rounded-lg max-w-md text-center relative">
-            <h2 className="text-2xl font-bold">{selectedService.title}</h2>
+          <div className="bg-white text-black p-6 rounded-lg max-w-md text-center relative ">
+            <h2 className="text-2xl font-bold mb-6 text-pink-700">{selectedService.title}</h2>
            
-            <ul className="mt-4 text-left list-disc pl-5">
+            <ul className="mt-4 text-left text-lg font-sans list-disc pl-5 leading-relaxed text-gray-800">
               {selectedService.items.map((item, idx) => (
-                <li key={idx} className="text-sm">
+                <li key={idx} className="text-base mb-3">
                   {item}
                 </li>
               ))}
@@ -124,5 +124,4 @@ const Services = () => {
     </section>
   );
 };
-
 export default Services;
