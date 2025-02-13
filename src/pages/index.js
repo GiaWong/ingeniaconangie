@@ -25,38 +25,34 @@ const TitleSection = () => (
     id="quien-soy"
     initial="hidden"
     animate="visible"
-    className="flex flex-col md:flex-row items-center justify-center mt-24 px-4 sm:px-6 w-full gap-y-4 md:gap-x-[2vw] max-w-[90vw] mx-auto"
+    className="relative flex flex-col md:flex-row items-center justify-center mt-24 px-4 sm:px-6 w-full gap-y-4 md:gap-x-[2vw] max-w-[90vw] mx-auto"
     variants={{
       hidden: { opacity: 0 },
       visible: { opacity: 1, transition: { staggerChildren: 0.3 } }
     }}
   >
-    <motion.div className="flex flex-col items-center md:items-start gap-y-4">
+    {/* Foto y texto burbuja al lado */}
+    <motion.div className="relative w-full md:w-1/2 flex justify-center md:justify-end">
+      <img
+        src="/LogoBlanco.png"
+        alt="Logo"
+        className="w-56 h-auto sm:w-64 md:w-80 rounded-full shadow-lg"
+      />
+    </motion.div>
+
+    <motion.div className="relative w-full md:w-1/2 flex flex-col gap-y-4">
       {bubbleTexts.map((text, index) => (
         <motion.div
           key={index}
-          className="font-bold text-lg sm:text-2xl md:text-3xl py-2 sm:py-3 px-4 sm:px-6 bg-white text-purple-800 rounded-full shadow-lg whitespace-nowrap"
-          style={{ transform: `translateX(${index * 5}px)` }}
+          className="font-bold text-lg sm:text-2xl md:text-3xl py-2 sm:py-3 px-4 sm:px-6 bg-white text-purple-800 rounded-full shadow-lg whitespace-nowrap transform hover:scale-105 transition-transform"
           variants={{
-            hidden: { opacity: 0, scale: 0.5 },
-            visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } }
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
           }}
         >
           {text}
         </motion.div>
       ))}
-    </motion.div>
-
-    <motion.div className="flex-shrink-0 mt-4 md:mt-0">
-      <motion.img
-        src="/LogoBlanco.png"
-        alt="Logo"
-        className="w-56 h-auto sm:w-64 md:w-90 animate-move-vertical"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      />
     </motion.div>
   </motion.div>
 );
