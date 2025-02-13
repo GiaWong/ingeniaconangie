@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import { motion,  AnimatePresence } from 'framer-motion';
 
 const qaData = [
@@ -47,36 +47,51 @@ const qaData = [
 
 const QandA = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerSlide, setItemsPerSlide] = useState(2);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerSlide(window.innerWidth < 768 ? 1 : 2);
+    };
+
+    handleResize(); // Ejecutar al cargar
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex + 2 >= qaData.length ? 0 : prevIndex + 2
+    setCurrentIndex((prevIndex) =>
+      prevIndex + itemsPerSlide >= qaData.length ? 0 : prevIndex + itemsPerSlide
     );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex - 2 < 0 ? Math.max(0, qaData.length - (qaData.length % 2 ? 1 : 2)) : prevIndex - 2
+    setCurrentIndex((prevIndex) =>
+      prevIndex - itemsPerSlide < 0
+        ? Math.max(0, qaData.length - (qaData.length % itemsPerSlide || itemsPerSlide))
+        : prevIndex - itemsPerSlide
     );
   };
 
   return (
-    <section 
+    <section
       id="qanda"
-      className="mt-10 py-20 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white">
+      className="mt-10 py-20 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white"
+    >
       <h1 className="text-7xl md:text-8xl font-bold font-sans text-center">Q&A</h1>
-      
-      <div className="mt-32  mb-32 gap-8 max-w-4xl mx-auto px-6 relative overflow-hidden">
+
+      <div className="mt-32 mb-32 gap-8 max-w-4xl mx-auto px-6 relative overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
-            className="flex gap-6 justify-center items-center transition-all"
+            className="flex flex-col md:flex-row gap-6 justify-center items-center transition-all"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
           >
-            {qaData.slice(currentIndex, currentIndex + 2).map((item, index) => (
+            {qaData.slice(currentIndex, currentIndex + itemsPerSlide).map((item, index) => (
               <div
                 key={index}
                 className="w-96 p-6 bg-indigo-900 bg-opacity-30 rounded-lg shadow-lg text-center flex flex-col items-center"
@@ -105,5 +120,4 @@ const QandA = () => {
     </section>
   );
 };
-
 export default QandA;
