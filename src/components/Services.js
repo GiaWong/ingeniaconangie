@@ -43,7 +43,7 @@ const Services = () => {
   return (
     <section id="servicios" className="mt-10 py-20 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white">
       <div className="max-w-5xl mx-auto px-6">
-        <h1 className="text-8xl font-bold font-sans">Servicios</h1>
+        <h1 className="text-7xl md:text-8xl font-bold font-sans">Servicios</h1>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-32 mb-32"
           initial="hidden"
