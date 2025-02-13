@@ -64,7 +64,7 @@ const QandA = () => {
     <section 
       id="qanda"
       className="mt-10 py-20 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 text-white">
-      <h1 className="text-8xl font-bold font-sans text-center">Q&A</h1>
+      <h1 className="text-7xl md:text-8xl font-bold font-sans text-center">Q&A</h1>
       
       <div className="mt-32  mb-32 gap-8 max-w-4xl mx-auto px-6 relative overflow-hidden">
         <AnimatePresence mode="wait">
