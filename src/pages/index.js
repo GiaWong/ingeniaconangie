@@ -51,7 +51,7 @@ const TitleSection = () => (
       <motion.img
         src="/LogoBlanco.png"
         alt="Logo"
-        className="w-32 h-auto sm:w-40 md:max-w-[40vw] animate-move-vertical"
+        className="w-56 h-auto sm:w-64 md:w-90 animate-move-vertical"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
