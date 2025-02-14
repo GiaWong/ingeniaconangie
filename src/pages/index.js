@@ -44,7 +44,7 @@ const TitleSection = () => (
       {bubbleTexts.map((text, index) => (
         <motion.div
           key={index}
-          className="font-bold text-lg sm:text-2xl md:text-3xl py-2 sm:py-3 px-4 sm:px-6 rounded-full shadow-lg whitespace-nowrap transform hover:scale-105 transition-transform text-white bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 animate-gradient-move max-w-[80%] mx-auto"
+          className="font-bold text-lg sm:text-2xl md:text-3xl py-2 sm:py-3 px-4 sm:px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform text-white bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 animate-gradient-move max-w-full mx-auto text-center break-words"
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
