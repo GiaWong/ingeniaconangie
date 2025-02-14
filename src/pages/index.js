@@ -31,12 +31,14 @@ const TitleSection = () => (
       visible: { opacity: 1, transition: { staggerChildren: 0.3 } }
     }}
   >
-    {/* Logo arriba y burbujas abajo en pantallas grandes */}
-    <motion.div className="relative w-full md:w-1/2 flex justify-center">
+    <motion.div
+      className="relative w-full md:w-1/2 flex justify-center mt-32 mb-32"
+      animate={{ scale: [1, 1.1, 1], transition: { duration: 3, repeat: Infinity } }}
+    >
       <img
         src="/LogoBlanco.png"
         alt="Logo"
-        className="w-56 h-auto sm:w-64 md:w-80 rounded-full shadow-lg"
+        className="w-56 h-auto sm:w-64 md:w-80 rounded-full shadow-lg shadow-pink-400"
       />
     </motion.div>
 
