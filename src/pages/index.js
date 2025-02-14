@@ -32,8 +32,13 @@ const TitleSection = () => (
     }}
   >
     <motion.div
-      className="relative w-full md:w-1/2 flex justify-center mt-32 mb-32"
-      animate={{ scale: [1, 1.1, 1], transition: { duration: 3, repeat: Infinity } }}
+      className="relative w-full flex justify-center mt-32 mb-32"
+      animate={{
+        scale: [1, 1.1, 1],
+        transition: { duration: 3, repeat: Infinity }
+      }}
+      // Ajustamos el tamaño de la imagen para que sea responsiva
+      style={{ maxWidth: '100%', height: 'auto' }}
     >
       <img
         src="/LogoBlanco.png"
@@ -58,6 +63,7 @@ const TitleSection = () => (
     </motion.div>
   </motion.div>
 );
+
 
 
 const AboutSection = () => {
