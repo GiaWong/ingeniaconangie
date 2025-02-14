@@ -25,14 +25,14 @@ const TitleSection = () => (
     id="quien-soy"
     initial="hidden"
     animate="visible"
-    className="relative flex flex-col md:flex-row items-center justify-center mt-24 px-4 sm:px-6 w-full gap-y-4 md:gap-x-[2vw] max-w-[90vw] mx-auto"
+    className="relative flex flex-col md:flex-col items-center justify-center mt-24 px-4 sm:px-6 w-full gap-y-4 md:gap-y-8 max-w-[90vw] mx-auto"
     variants={{
       hidden: { opacity: 0 },
       visible: { opacity: 1, transition: { staggerChildren: 0.3 } }
     }}
   >
-    {/* Foto y texto burbuja al lado */}
-    <motion.div className="relative w-full md:w-1/2 flex justify-center md:justify-end">
+    {/* Logo arriba y burbujas abajo en pantallas grandes */}
+    <motion.div className="relative w-full md:w-1/2 flex justify-center">
       <img
         src="/LogoBlanco.png"
         alt="Logo"
@@ -40,7 +40,7 @@ const TitleSection = () => (
       />
     </motion.div>
 
-    <motion.div className="relative w-full md:w-1/2 flex flex-col gap-y-4">
+    <motion.div className="relative w-full md:w-1/2 flex flex-col gap-y-4 md:mt-6">
       {bubbleTexts.map((text, index) => (
         <motion.div
           key={index}
