@@ -1,40 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Proyecto Website para IngeniaConAngie
 
-## Getting Started
+Este proyecto es una aplicación web desarrollada con **Next.js** como parte del trabajo freelance realizado para la empresa **IngeniaConAngie**. La aplicación cuenta con animaciones y diseño responsivo, adaptado tanto para computadoras como para dispositivos móviles.
 
-First, run the development server:
+## Proyecto Final
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El proyecto final puede verse en el siguiente enlace:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[https://ingeniaconangie.web.app](https://ingeniaconangie.web.app/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Descripción del Proyecto
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+El sitio web está diseñado para representar la identidad visual y los servicios de IngeniaConAngie. Incluye animaciones de transiciones, efectos visuales y diseño adaptable para ofrecer una experiencia fluida tanto en escritorio como en dispositivos móviles.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Demo Visual
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A continuación, se presentan algunos ejemplos visuales de la web en funcionamiento:
 
-## Learn More
+### Vista desde Computadora
 
-To learn more about Next.js, take a look at the following resources:
+![Demo Escritorio](./assets/demo-escritorio.gif)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### Vista desde Móvil
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Demo Móvil](./assets/demo-movil.gif)
 
-## Deploy on Vercel
+*Nota: Los GIFs son capturas de la versión actual del sitio.*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estructura del Proyecto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- **src/pages**: Contiene las páginas principales de la aplicación.
+- **src/components**: Componentes reutilizables como secciones, títulos, y efectos visuales.
+- **src/styles**: Archivos de estilos y personalización con Tailwind CSS.
+
+## Tecnologías Utilizadas
+
+- **Next.js**: Framework de React para aplicaciones web.
+- **Tailwind CSS**: Framework para estilizar la aplicación de manera rápida y eficiente.
+- **Framer Motion**: Librería para animaciones y transiciones fluidas.
+
+## Consideraciones
+
+Este proyecto fue desarrollado específicamente para **IngeniaConAngie**, por lo que cualquier modificación debe ser consultada con la empresa o la autora del código.
+
+## Contacto
+
+Para consultas o sugerencias sobre este proyecto:
+
+- Correo: laboral.wong@gmail.com
+
+---
+
+Desarrollado por [Wongia](https://github.com/GiaWong)
+
