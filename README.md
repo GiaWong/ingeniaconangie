@@ -12,31 +12,16 @@ El proyecto final puede verse en el siguiente enlace:
 
 El sitio web está diseñado para representar la identidad visual y los servicios de IngeniaConAngie. Incluye animaciones de transiciones, efectos visuales y diseño adaptable para ofrecer una experiencia fluida tanto en escritorio como en dispositivos móviles.
 
-## Demo Visual
-
-A continuación, se presentan algunos ejemplos visuales de la web en funcionamiento:
-
-### Vista desde Computadora
-
-![Demo Escritorio](./assets/demo-escritorio.gif)
-
-### Vista desde Móvil
-
-![Demo Móvil](./assets/demo-movil.gif)
-
-*Nota: Los GIFs son capturas de la versión actual del sitio.*
-
-## Estructura del Proyecto
-
-- **src/pages**: Contiene las páginas principales de la aplicación.
-- **src/components**: Componentes reutilizables como secciones, títulos, y efectos visuales.
-- **src/styles**: Archivos de estilos y personalización con Tailwind CSS.
-
 ## Tecnologías Utilizadas
 
-- **Next.js**: Framework de React para aplicaciones web.
-- **Tailwind CSS**: Framework para estilizar la aplicación de manera rápida y eficiente.
-- **Framer Motion**: Librería para animaciones y transiciones fluidas.
+- **Lenguaje de Programación**: JavaScript
+- **Framework Frontend**: Next.js (basado en React)
+- **Bibliotecas**:
+  - **React**: Librería para la construcción de interfaces de usuario.
+  - **Framer Motion**: Librería para animaciones y transiciones fluidas.
+  - **Tailwind CSS**: Framework para estilizar la aplicación de manera rápida y eficiente.
+- **Base de Datos**: Firebase Firestore
+- **Hosting**: Firebase Hosting
 
 ## Consideraciones
 
